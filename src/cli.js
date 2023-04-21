@@ -1,9 +1,8 @@
 // import fs from 'fs';
 // import path from 'path';
-import genTokens from './gen.js';
+import genTokens from './gen.js'
 // const CONFIG_FIGMA_FILE = path.join(process.cwd(), '.', 'config.figma.json');
 export default async function figmaApi(config) {
-
   // try {
   //   fs.access(CONFIG_FIGMA_FILE, fs.F_OK, err => {
   //     if (err) {
@@ -27,7 +26,7 @@ export default async function figmaApi(config) {
   //           console.warn('⚠️ No outdir found, default outdir is `./tokens.json`');
   //         }
 
-  const tokens = await genTokens(config.apiKey, config.id, 'FIGMA_OUTDIR')
+  const tokens = await genTokens(config.accessToken, config.fileId, 'FIGMA_OUTDIR')
   return tokens
 
   //       }
