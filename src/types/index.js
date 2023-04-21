@@ -1,6 +1,4 @@
-export { default as getBreakpoints } from './getBreakpoints.js'
 export { default as getColors } from './getColors.js'
-export { default as getRadius } from './getRadius.js'
-export { default as getShadows } from './getShadows.js'
+export { default as getDeploy } from './getDeploy.js'
 export { default as getSpacing } from './getSpacing.js'
 export { default as getTypography } from './getTypography.js'

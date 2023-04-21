@@ -1,7 +1,8 @@
 import { getTokens, camelCase } from '../utils.js'
-
-export default function getSpacing (layerName, stylesArtboard) {
-  const palette = { spacing: {} }
+export default function getSpacing(layerName, stylesArtboard) {
+  const palette = {
+    spacing: {}
+  }
   const decorator = element => {
     const {
       name,
@@ -12,6 +13,5 @@ export default function getSpacing (layerName, stylesArtboard) {
     }
     Object.assign(palette.spacing, tokens)
   }
-
   return getTokens(layerName, stylesArtboard, palette, decorator)
 }

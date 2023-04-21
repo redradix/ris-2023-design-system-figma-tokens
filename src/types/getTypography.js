@@ -1,16 +1,11 @@
 import { getTokens, camelCase } from '../utils.js'
-
-export default function getTypography (layerName, stylesArtboard) {
-  const palette = { typography: {} }
+export default function getTypography(layerName, stylesArtboard) {
+  const palette = {
+    typography: {}
+  }
   const decorator = element => {
     const { name } = element
-    const {
-      fontFamily,
-      fontSize,
-      lineHeightPx,
-      fontWeight
-    } = element.children[0].style
-
+    const { fontFamily, fontSize, lineHeightPx, fontWeight } = element.children[0].style
     const tokens = {
       [camelCase(name)]: {
         fontFamily: `'${fontFamily}'`,
@@ -21,6 +16,5 @@ export default function getTypography (layerName, stylesArtboard) {
     }
     Object.assign(palette.typography, tokens)
   }
-
   return getTokens(layerName, stylesArtboard, palette, decorator)
 }

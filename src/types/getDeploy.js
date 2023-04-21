@@ -1,7 +1,7 @@
 import { getTokens, camelCase, rgbaGenObject, fullColorHex } from '../utils.js'
-export default function getColors(layerName, stylesArtboard) {
+export default function getDeploy(layerName, stylesArtboard) {
   const palette = {
-    color: {}
+    isReadyForDeploy: {}
   }
   const decorator = element => {
     const { name } = element
@@ -10,7 +10,10 @@ export default function getColors(layerName, stylesArtboard) {
     const tokens = {
       [camelCase(name)]: `${fullColorHex(colorRGBA.r, colorRGBA.g, colorRGBA.b)}`
     }
-    Object.assign(palette.color, tokens)
+
+    Object.assign(palette.isReadyForDeploy, tokens, {
+      isReady: tokens.color.toLowerCase() === '#00ff00'
+    })
   }
   return getTokens(layerName, stylesArtboard, palette, decorator)
 }
