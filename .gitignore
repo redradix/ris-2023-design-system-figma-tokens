@@ -12,3 +12,4 @@ npm-debug.log
 .npmrc
 config.json
 config.figma.json
+package-lock.json

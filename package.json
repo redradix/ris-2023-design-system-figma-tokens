@@ -1,5 +1,5 @@
 {
-  "name": "figma-tokens",
+  "name": "ris-2023-design-system-figma-tokens",
   "version": "0.0.8",
   "description": "A tool for generate Figma design tokens as variables",
   "main": "./bin/figma-tokens.js",
